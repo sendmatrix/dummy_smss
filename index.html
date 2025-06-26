@@ -24,19 +24,69 @@
       align-items: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    header img {
-      height: 40px;
-      margin-right: 10px;
-    }
     .profile-ribbon {
-      background: #ffffff;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 12px;
-      display: flex;
-      justify-content: space-between;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
+  background: linear-gradient(135deg, #ffffff, #f3f4f6);
+  padding: 18px 20px;
+  margin: 20px 0;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+  border-left: 5px solid #3b82f6;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-ribbon .info {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.profile-ribbon .info span {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.profile-ribbon .dropdown {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.profile-ribbon .dropdown:hover {
+  background: #2563eb;
+}
+
+header img {
+  height: 48px;
+  margin-right: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+
     .dropdown {
       padding: 8px 15px;
       background: #58B0C6;
@@ -128,13 +178,42 @@
   color: #111827;
 }
 
+.country {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.country-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.country-left img {
+  width: 28px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.country-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .price {
-  font-weight: 600;
+  font-weight: 500;
   color: #10b981; /* Green */
-  margin-right: 10px;
-  min-width: 50px;
+  font-size: 14px;
+  min-width: 45px;
   text-align: right;
-  font-size: 15px;
 }
 
 .buy-btn {
@@ -150,14 +229,21 @@
 
 .buy-btn:hover {
   background-color: #60a5fa;
+  color: white;
+  transform: scale(1.05);
+}
+
+
+.buy-btn:hover {
+  background-color: #60a5fa;
   color: #fff;
   transform: scale(1.05);
 }
 
 
     .price {
-      font-weight: bold;
-      color: #22c55e;
+      
+      color: #000000;
     }
     .buy-btn {
       background: #58B0C6;
@@ -221,9 +307,9 @@
   <img src="https://img.icons8.com/color/48/facebook-new.png"/>
   <div>Facebook</div>
         </div>
-        <div class="service" data-service="mac-os" onclick="changeService('Mac-os')">
+        <div class="service" data-service="mac-os" onclick="changeService('Apple')">
   <img src="https://img.icons8.com/color/48/mac-os.png"/>
-  <div>Mac-os</div>
+  <div>Apple</div>
         </div>
         <div class="service" data-service="amazon" onclick="changeService('amazon')">
   <img src="https://img.icons8.com/color/48/amazon.png"/>
@@ -260,7 +346,7 @@
           <img src="https://flagcdn.com/w40/us.png" alt="United States">
           <div>United States</div>
         </div>
-        <div class="price">5 $</div>
+        <div class="price">5$</div>
         <button class="buy-btn">Buy Now</button>
       </div>
        <div class="country" data-country="united kingdom">
@@ -493,7 +579,7 @@
         <img src="https://flagcdn.com/w40/ar.png" alt="Argentina">
         <div>Argentina</div>
       </div>
-      <div class="price">2.5 $</div>
+      <div class="price">2.5$</div>
       <button class="buy-btn">Buy Now</button>
     </div>
     
@@ -502,7 +588,7 @@
         <img src="https://flagcdn.com/w40/cl.png" alt="Chile">
         <div>Chile</div>
       </div>
-      <div class="price">2.5 $</div>
+      <div class="price">2.5$</div>
       <button class="buy-btn">Buy Now</button>
     </div>
     
@@ -511,7 +597,7 @@
         <img src="https://flagcdn.com/w40/co.png" alt="Colombia">
         <div>Colombia</div>
       </div>
-      <div class="price">2.5 $</div>
+      <div class="price">2.5$</div>
       <button class="buy-btn">Buy Now</button>
     </div>
     
@@ -520,7 +606,7 @@
         <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam">
         <div>Vietnam</div>
       </div>
-      <div class="price">2.5 $</div>
+      <div class="price">2.5$</div>
       <button class="buy-btn">Buy Now</button>
     </div>
     
@@ -529,7 +615,7 @@
         <img src="https://flagcdn.com/w40/th.png" alt="Thailand">
         <div>Thailand</div>
       </div>
-      <div class="price">2.5 $</div>
+      <div class="price">2.5$</div>
       <button class="buy-btn">Buy Now</button>
     </div>
     
@@ -538,7 +624,7 @@
         <img src="https://flagcdn.com/w40/ph.png" alt="Philippines">
         <div>Philippines</div>
       </div>
-      <div class="price">2.5 $</div>
+      <div class="price">2.5$</div>
       <button class="buy-btn">Buy Now</button>
     </div>
     
@@ -547,7 +633,7 @@
         <img src="https://flagcdn.com/w40/my.png" alt="Malaysia">
         <div>Malaysia</div>
       </div>
-      <div class="price">2.5 $</div>
+      <div class="price">2.5$</div>
       <button class="buy-btn">Buy Now</button>
     </div>
     
@@ -556,7 +642,7 @@
         <img src="https://flagcdn.com/w40/id.png" alt="Indonesia">
         <div>Indonesia</div>
       </div>
-      <div class="price">2.5 $</div>
+      <div class="price">2.5$</div>
       <button class="buy-btn">Buy Now</button>
     </div>
     
@@ -646,7 +732,7 @@
         <img src="https://flagcdn.com/w40/ua.png" alt="Ukraine">
         <div>Ukraine</div>
       </div>
-      <div class="price">2.5 $</div>
+      <div class="price">2.5$</div>
       <button class="buy-btn">Buy Now</button>
     </div>
     
