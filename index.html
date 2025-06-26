@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DUMMY SMS</title>
+ <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body {
+      background: #f9fafb;
+      color: #1f2937;
+      padding: 10px;
+    }
+    header {
+      background: #ffffff;
+      color: #1f2937;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    header img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    .profile-ribbon {
+      background: #ffffff;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .dropdown {
+      padding: 8px 15px;
+      background: #1d4ed8;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .section {
+      margin: 20px 0;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+    }
+    .service {
+      background: #ffffff;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .service img {
+      height: 36px;
+      margin-bottom: 8px;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      padding: 8px 12px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .search-box input {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 8px;
+    }
+    .countries {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .country {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .country:hover {
+      background: #f1f5f9;
+    }
+    .country-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .country img {
+      width: 30px;
+      height: 20px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .price {
+      font-weight: bold;
+      color: #22c55e;
+    }
+    .buy-btn {
+      background: #3b82f6;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+    .buy-btn:hover {
+      background: #2563eb;
+      transform: scale(1.05);
+    }
+    .brand-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: #5A7FFF;
+  letter-spacing: 1px;
+}
+
+    @media (max-width: 600px) {
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="LOGO.svg" alt="Logo">
+    <h1 class="brand-title">DUMMY SMS</h1>
+  </header>
+
+  <!-- Profile -->
+  <div class="profile-ribbon">
+    <div>👤 Profile | 💰 Balance: $0</div>
+    <button class="dropdown">▼ Options</button>
+  </div>
+
+  <!-- Services -->
+  <div class="section">
+    <div class="section-title">Select a Service</div>
+    <div class="services">
+      <div class="service" data-service="WhatsApp" onclick="changeService('WhatsApp')">
+  <img src="https://img.icons8.com/color/48/whatsapp--v1.png"/>
+  <div>WhatsApp</div>
+</div>
+
+    <div class="service" data-service="Telegram" onclick="changeService('Telegram')">
+  <img src="https://img.icons8.com/color/48/telegram-app--v1.png"/>
+  <div>Telegram</div>
+</div>
+<!-- and so on for Google, Facebook, etc. -->
+        <div class="service" data-service="Google" onclick="changeService('Google')">
+  <img src="https://img.icons8.com/color/48/google-logo.png"/>
+  <div>Google</div>
+        </div>
+     <div class="service" data-service="Facebook" onclick="changeService('Facebook')">
+  <img src="https://img.icons8.com/color/48/facebook-new.png"/>
+  <div>Facebook</div>
+        </div>
+        <div class="service" data-service="mac-os" onclick="changeService('Mac-os')">
+  <img src="https://img.icons8.com/color/48/mac-os.png"/>
+  <div>Mac-os</div>
+        </div>
+        <div class="service" data-service="amazon" onclick="changeService('amazon')">
+  <img src="https://img.icons8.com/color/48/amazon.png"/>
+  <div>amazon</div>
+        </div>
+         <div class="service" data-service="Twitter" onclick="changeService('Twitter')">
+  <img src="https://img.icons8.com/color/48/twitter--v1.png"/>
+  <div>Twitter</div>
+        </div>
+      
+           <div class="service" data-service="flipkart" onclick="changeService('flipkart')">
+  <img src="https://img.icons8.com/color/48/flipkart.png"/>
+  <div>flipkart</div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Country Search -->
+  <div class="section">
+    <div class="section-title" id="countrySectionTitle">Available Countries</div>
+
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchCountry" placeholder="Search by Country" onkeyup="filterCountries()"/>
+    </div>
+
+    <div class="countries" id="countryList">
+      <!-- 💡 Paste 50 countries block HTML here if needed -->
+      <!-- Example: -->
+      <div class="country" data-country="united states">
+        <div class="country-left">
+          <img src="https://flagcdn.com/w40/us.png" alt="United States">
+          <div>United States</div>
+        </div>
+        <div class="price">$5</div>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+       <div class="country" data-country="united kingdom">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/gb.png" alt="United Kingdom">
+        <div>United Kingdom</div>
+      </div>
+      <div class="price">$4.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="germany">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/de.png" alt="Germany">
+        <div>Germany</div>
+      </div>
+      <div class="price">$4</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="france">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/fr.png" alt="France">
+        <div>France</div>
+      </div>
+      <div class="price">$4</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="italy">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/it.png" alt="Italy">
+        <div>Italy</div>
+      </div>
+      <div class="price">$4</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="spain">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/es.png" alt="Spain">
+        <div>Spain</div>
+      </div>
+      <div class="price">$4</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="india">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/in.png" alt="India">
+        <div>India</div>
+      </div>
+      <div class="price">$2</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="china">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/cn.png" alt="China">
+        <div>China</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="japan">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/jp.png" alt="Japan">
+        <div>Japan</div>
+      </div>
+      <div class="price">$3.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="south korea">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/kr.png" alt="South Korea">
+        <div>South Korea</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="brazil">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/br.png" alt="Brazil">
+        <div>Brazil</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="mexico">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/mx.png" alt="Mexico">
+        <div>Mexico</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="russia">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/ru.png" alt="Russia">
+        <div>Russia</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="australia">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/au.png" alt="Australia">
+        <div>Australia</div>
+      </div>
+      <div class="price">$4</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="netherlands">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/nl.png" alt="Netherlands">
+        <div>Netherlands</div>
+      </div>
+      <div class="price">$3.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="sweden">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/se.png" alt="Sweden">
+        <div>Sweden</div>
+      </div>
+      <div class="price">$3.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="norway">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/no.png" alt="Norway">
+        <div>Norway</div>
+      </div>
+      <div class="price">$3.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="denmark">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/dk.png" alt="Denmark">
+        <div>Denmark</div>
+      </div>
+      <div class="price">$3.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="finland">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/fi.png" alt="Finland">
+        <div>Finland</div>
+      </div>
+      <div class="price">$3.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="poland">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/pl.png" alt="Poland">
+        <div>Poland</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="czech republic">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/cz.png" alt="Czech Republic">
+        <div>Czech Republic</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="hungary">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/hu.png" alt="Hungary">
+        <div>Hungary</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="turkey">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/tr.png" alt="Turkey">
+        <div>Turkey</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="saudi arabia">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/sa.png" alt="Saudi Arabia">
+        <div>Saudi Arabia</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="uae">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/ae.png" alt="UAE">
+        <div>UAE</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="south africa">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/za.png" alt="South Africa">
+        <div>South Africa</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="argentina">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/ar.png" alt="Argentina">
+        <div>Argentina</div>
+      </div>
+      <div class="price">$2.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="chile">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/cl.png" alt="Chile">
+        <div>Chile</div>
+      </div>
+      <div class="price">$2.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="colombia">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/co.png" alt="Colombia">
+        <div>Colombia</div>
+      </div>
+      <div class="price">$2.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="vietnam">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam">
+        <div>Vietnam</div>
+      </div>
+      <div class="price">$2.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="thailand">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/th.png" alt="Thailand">
+        <div>Thailand</div>
+      </div>
+      <div class="price">$2.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="philippines">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/ph.png" alt="Philippines">
+        <div>Philippines</div>
+      </div>
+      <div class="price">$2.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="malaysia">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/my.png" alt="Malaysia">
+        <div>Malaysia</div>
+      </div>
+      <div class="price">$2.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="indonesia">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/id.png" alt="Indonesia">
+        <div>Indonesia</div>
+      </div>
+      <div class="price">$2.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="pakistan">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/pk.png" alt="Pakistan">
+        <div>Pakistan</div>
+      </div>
+      <div class="price">$2</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="bangladesh">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/bd.png" alt="Bangladesh">
+        <div>Bangladesh</div>
+      </div>
+      <div class="price">$2</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="egypt">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/eg.png" alt="Egypt">
+        <div>Egypt</div>
+      </div>
+      <div class="price">$2</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="nigeria">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria">
+        <div>Nigeria</div>
+      </div>
+      <div class="price">$2</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="kenya">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/ke.png" alt="Kenya">
+        <div>Kenya</div>
+      </div>
+      <div class="price">$2</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="morocco">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/ma.png" alt="Morocco">
+        <div>Morocco</div>
+      </div>
+      <div class="price">$2</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="greece">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/gr.png" alt="Greece">
+        <div>Greece</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="portugal">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/pt.png" alt="Portugal">
+        <div>Portugal</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="romania">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/ro.png" alt="Romania">
+        <div>Romania</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="ukraine">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/ua.png" alt="Ukraine">
+        <div>Ukraine</div>
+      </div>
+      <div class="price">$2.5</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="israel">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/il.png" alt="Israel">
+        <div>Israel</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="new zealand">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/nz.png" alt="New Zealand">
+        <div>New Zealand</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="singapore">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/sg.png" alt="Singapore">
+        <div>Singapore</div>
+      </div>
+      <div class="price">$3</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    
+    <div class="country" data-country="switzerland">
+      <div class="country-left">
+        <img src="https://flagcdn.com/w40/ch.png" alt="Switzerland">
+        <div>Switzerland</div>
+      </div>
+      <div class="price">$4</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    </div>
+  </div>
+
+  <script>
+  let selectedService = null;
+
+  function filterCountries() {
+    const input = document.getElementById("searchCountry").value.toLowerCase();
+    const countries = document.querySelectorAll(".country");
+    countries.forEach(c => {
+      c.style.display = c.dataset.country.includes(input) ? "flex" : "none";
+    });
+  }
+
+  function changeService(serviceName) {
+    selectedService = serviceName;
+    const sectionTitle = document.getElementById("countrySectionTitle");
+    sectionTitle.innerText = "Available Countries for " + serviceName;
+    document.getElementById("searchCountry").value = ""; // clear search
+    filterCountries(); // refresh country visibility
+  }
+</script>
+
+
+</body>
+</html>
